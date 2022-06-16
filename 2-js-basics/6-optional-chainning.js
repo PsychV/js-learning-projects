@@ -1,3 +1,4 @@
+"use strict";
 // Sometimes we want to acces an object property that might be undefined
 // if we try to access an empty property in JS we will get an error by default
 
