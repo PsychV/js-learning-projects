@@ -1,3 +1,4 @@
+"use strict";
 // When an object variable is copied, the reference is copied, but the object itself is not duplicated.
 let user = {
     name: "Jhon"

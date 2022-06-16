@@ -1,3 +1,4 @@
+"use strict";
 // two ways of declaring an empty object
 let user = {};
 let user2 = new Object(); 

@@ -1,5 +1,5 @@
-// A function that is a property of an object is called its method.
 "use strict";
+// A function that is a property of an object is called its method.
 let user = {
     name: "John",
     age: 30

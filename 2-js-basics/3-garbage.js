@@ -1,3 +1,4 @@
+"use strict";
 // "reachable” values are those that are accessible or usable (there are two types)
 // Type A -> inherently reachable values, because we are using them = root values
 // Examples: 

@@ -1,3 +1,4 @@
+"use strict";
 // the main purpose of constructors is to implement 
 // reusable object creation code.
 
