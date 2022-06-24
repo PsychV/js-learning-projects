@@ -173,7 +173,7 @@ for (let i = 0; i < streamOfText.length; i++){
 console.log("Decoded Message:");
 console.log(decodedOutput);
 
-function readCharacter(character){
+function readCharacter(character){ 
     if (character !== ","){
         integerString += character;
     }else{
@@ -251,4 +251,119 @@ decodedOutput += getLetter(remainder).toLowerCase();
 
 function punctuationDecoding(remainder){
 decodedOutput += getSymbol(remainder)
+}
+
+/* Final Chapter 2 exercises
+2-1. Using only single-character output statements that output a hash mark, a
+space, or an end-of-line, write a program that produces the following shape:
+########
+ ######
+  ####
+   ##
+*/
+console.log("final exercise 2.1");
+
+output = "";
+let size = 8;
+let spaces = 0;
+for (let i = 1; i <= 4; i++){
+    addSpaceToOutput(spaces/2);
+    addHashToOutput(size - spaces);
+    addSpaceToOutput(spaces/2);
+    addEndOfLineToOutput();
+    spaces += 2;
+}
+console.log(output); 
+
+function addHashToOutput(times){
+    for (let i= 1; i <= times; i++){
+        output += "#";
+    }
+}
+
+function addEndOfLineToOutput(){
+    output += "\n";
+}
+
+function addSpaceToOutput(times){
+    for (let i= 1; i <= times; i++){
+        output += " ";
+    }
+}
+/*
+2-2. Or how about:
+   ##
+  ####
+ ######
+########
+########
+ ######
+  ####
+   ##
+*/
+console.log("final exercise 2.2");
+
+excercise2_2();
+
+function excercise2_2(){
+    let localOutput = "";
+    for (let i =1; i<= 4; i++){
+        let space = 8 - (i*2);
+        let addToOutput = "";
+        addToOutput += addChar(space/2, " ");
+        addToOutput += addChar(i*2, "#");
+        addToOutput += addChar(space/2, " ");
+        addToOutput += addChar(1, "\n");
+        addToOutput += addToOutput;
+
+        localOutput = localOutput.slice(0, localOutput.length/2) + addToOutput + localOutput.slice(localOutput.length/2, localOutput.length);
+    }
+    console.log(localOutput);
+}
+
+function addChar(n, char){
+    let output = "";
+    for( let i = 1; i <= n; i++){
+        output += char;
+    }
+    return output;
+}
+
+console.log("final exercise 2.3");
+/*
+#            # // <-- 14 -->
+ ##        ##
+  ###    ###
+   ########
+   ########
+  ###    ###
+ ##        ##
+#            #
+*/
+
+excercise2_3();
+
+function excercise2_3(){
+    let localOutput = "";
+    for (let i =1; i<= 4; i++){
+        let addToOutput = "";
+        let firstNspaces = i-1;
+        let secondNspaces = 14 -(2*i) -(2*firstNspaces);
+
+        addToOutput += addChar(firstNspaces, " ");
+        addToOutput += addChar(i, "#");
+
+        addToOutput += addChar(secondNspaces, " ");
+
+        addToOutput += addChar(i, "#");
+        addToOutput += addChar(firstNspaces, " ");
+
+        addToOutput += addChar(1,"\n");
+
+        // double new string
+        addToOutput += addToOutput;
+        // insert new string in the middle of old string
+        localOutput = localOutput.slice(0, localOutput.length/2) + addToOutput + localOutput.slice(localOutput.length/2, localOutput.length);
+    }
+    console.log(localOutput);
 }
