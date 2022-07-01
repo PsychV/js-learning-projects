@@ -70,3 +70,8 @@ int main() {
     std::cout << "FIN";
     return 0;
 }
+
+/* 
+Why i can add more items to the array, despite having declare it to contain X elements. 
+Why should i use delete then?
+*/
